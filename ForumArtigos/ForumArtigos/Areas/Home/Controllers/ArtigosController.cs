@@ -9,5 +9,10 @@ namespace ForumArtigos.Areas.Home.Controllers
         {
             return View();
         }
+
+        public IActionResult Criar()
+        {
+            return View();
+        }
     }
 }
