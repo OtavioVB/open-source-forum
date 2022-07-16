@@ -15,12 +15,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/Desktop/Open Source/ForumArtigos/ForumArtigos/Areas/Home/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9tZVxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+[C:/Users/Admin/Desktop/Open Source/ForumArtigos/ForumArtigos/Areas/Home/Views/Artigos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9tZVxWaWV3c1xBcnRpZ29zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/Open Source/ForumArtigos/ForumArtigos/Areas/Home/Views/Index/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9tZVxWaWV3c1xJbmRleFxJbmRleC5jc2h0bWw=
+[C:/Users/Admin/Desktop/Open Source/ForumArtigos/ForumArtigos/Areas/Home/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9tZVxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Desktop/Open Source/ForumArtigos/ForumArtigos/Areas/Home/Views/_ViewImports.cshtml]
