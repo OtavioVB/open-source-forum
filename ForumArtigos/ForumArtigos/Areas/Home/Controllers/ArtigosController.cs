@@ -19,6 +19,7 @@ namespace ForumArtigos.Areas.Home.Controllers
         [Route("Home/Artigos/Visualizar/{url}")]
         public IActionResult Visualizar([FromRoute] string Url)
         {
+            TempData["ARTIGO_IDENTIFICADOR"] = Url;
             return View("Areas/Home/Views/Artigos/Artigo.cshtml");
         }
     }
