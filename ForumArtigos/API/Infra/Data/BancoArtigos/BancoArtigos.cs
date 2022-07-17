@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-
+using System.Data;
 
 namespace API.Infra.Data.BancoArtigos
 {
@@ -16,6 +16,39 @@ namespace API.Infra.Data.BancoArtigos
                     Comando.Parameters.AddWithValue("@Conteudo", Conteúdo);
                     Comando.Parameters.AddWithValue("@Url", URL);
                     Comando.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                CONEXAO_BANCO().Close();
+            }
+        }
+
+        public static DataTable OBTER_TODOS_OS_ARTIGOS_CADASTRADOS()
+        {
+            try
+            {
+                using (MySqlCommand Comando = CONEXAO_BANCO().CreateCommand())
+                {
+                    Comando.CommandText = "SELECT N_ID AS Identificador, T_TITULO AS Titulo, T_CONTEUDO AS Conteudo, T_URL AS URL FROM TB_ARTIGO";
+                    using (DataTable Data = new DataTable())
+                    {
+                        using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(Comando))
+                        {
+                            dataAdapter.Fill(Data);
+                        }
+
+                        if (Data.Rows.Count > 0)
+                        {
+                            return Data;
+                        }
+
+                        return null;
+                    }
                 }
             }
             catch

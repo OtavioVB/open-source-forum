@@ -11,7 +11,7 @@ namespace API.Infra.CrossCutting
             NovoTexto = NovoTexto.ToLower();
             NovoTexto = NovoTexto.Replace("ç", "c");
             NovoTexto = NovoTexto.Replace("!", "");
-            NovoTexto = NovoTexto.Replace(" ", "");
+            NovoTexto = NovoTexto.Replace(" ", "-");
             NovoTexto = NovoTexto.Replace("#", "");
             NovoTexto = NovoTexto.Replace("$", "");
             NovoTexto = NovoTexto.Replace("%", "");

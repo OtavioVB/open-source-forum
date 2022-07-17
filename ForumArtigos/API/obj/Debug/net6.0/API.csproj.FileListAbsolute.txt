@@ -44,3 +44,4 @@ C:\Users\Admin\Desktop\Open Source\ForumArtigos\API\bin\Debug\net6.0\runtimes\un
 C:\Users\Admin\Desktop\Open Source\ForumArtigos\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Admin\Desktop\Open Source\ForumArtigos\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\Desktop\Open Source\ForumArtigos\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Admin\Desktop\Open Source\ForumArtigos\API\bin\Debug\net6.0\Newtonsoft.Json.dll

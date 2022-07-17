@@ -1,3 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Artigos | Fórum";
+
+    HttpClient HTTP_REQUEST = new HttpClient { BaseAddress = new Uri("https://localhost:7123/api/v1/content/") };
+    HttpResponseMessage HTTP_RESULT = await HTTP_REQUEST.GetAsync("artigos");
+    string HTTP_CONTENT = await HTTP_RESULT.Content.ReadAsStringAsync();
+    List<Artigos> jsonConvert = JsonConvert.DeserializeObject<List<Artigos>>(HTTP_CONTENT);
+}
+
+@{
+    foreach (Artigos Artigo in jsonConvert)
+    {
+        <a asp-action="Visualizar" asp-route-id="@Artigo.URL">@Artigo.Titulo</a>
+    }
 }

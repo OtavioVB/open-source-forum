@@ -10,6 +10,20 @@ namespace API.Controllers
     [ApiController]
     public class ArtigosController : ControllerBase
     {
+        [HttpGet]
+        public string Get()
+        {
+            try
+            {
+                return TratamentoDeJSON.CONVERTER_DATATABLE_PARA_JSON(BancoArtigos.OBTER_TODOS_OS_ARTIGOS_CADASTRADOS());
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        
+        
         [HttpPost("criar")]
         public IActionResult Post([FromBody] ArtigosModel Artigo)
         {
@@ -24,7 +38,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("{url}")]
+        [HttpGet("artigo/{url}")]
         public string Get(string url)
         {
             return "Melhor do mundo";

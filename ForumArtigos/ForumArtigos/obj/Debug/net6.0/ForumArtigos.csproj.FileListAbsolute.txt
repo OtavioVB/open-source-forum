@@ -24,3 +24,5 @@ C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos\obj\Debug\net6.0\Fo
 C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos\obj\Debug\net6.0\ForumArtigos.genruntimeconfig.cache
 C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos\obj\Debug\net6.0\ref\ForumArtigos.dll
 C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos\obj\Debug\net6.0\scopedcss\Areas\Home\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\Open Source\ForumArtigos\ForumArtigos\obj\Debug\net6.0\ForumArtigos.csproj.CopyComplete
