@@ -14,5 +14,12 @@ namespace ForumArtigos.Areas.Home.Controllers
         {
             return View();
         }
+
+
+        [Route("Home/Artigos/Visualizar/{url}")]
+        public IActionResult Visualizar([FromRoute] string Url)
+        {
+            return View("Areas/Home/Views/Artigos/Artigo.cshtml");
+        }
     }
 }
