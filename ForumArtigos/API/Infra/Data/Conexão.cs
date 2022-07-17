@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace API.Data
+
+namespace API.Infra.Data
 {
     public class Conexão
     {
