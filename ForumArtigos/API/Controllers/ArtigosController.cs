@@ -25,16 +25,9 @@ namespace API.Controllers
         }
 
         [HttpGet("{url}")]
-        public IActionResult Get(string url)
+        public string Get(string url)
         {
-            try
-            {
-                return StatusCode(200, "Método GET realizado com sucesso!");
-            }
-            catch
-            {
-                return StatusCode(500, "Um erro inesperado ocorreu com o servidor");
-            }
+            return "Melhor do mundo";
         }
     }
 }
