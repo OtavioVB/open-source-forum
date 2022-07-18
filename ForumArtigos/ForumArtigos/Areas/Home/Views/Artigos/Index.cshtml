@@ -1,3 +1,41 @@
 ﻿@{
     ViewData["Title"] = "Artigos | Fórum";
+
+    HttpClient HTTP_REQUEST = new HttpClient { BaseAddress = new Uri("https://localhost:7123/api/v1/content/") };
+    HttpResponseMessage HTTP_RESULT = await HTTP_REQUEST.GetAsync("artigos");
+    string HTTP_CONTENT = await HTTP_RESULT.Content.ReadAsStringAsync();
+    List<Artigos> jsonConvert = JsonConvert.DeserializeObject<List<Artigos>>(HTTP_CONTENT);
+    string Conteudo;
 }
+<style>
+    .card{
+      margin: 10px 0;
+    }
+</style>
+<div class="card-columns">
+    @{
+        if (jsonConvert != null)
+        {
+            foreach (Artigos Artigo in jsonConvert)
+            {
+                if (Artigo.Conteudo.Length > 150)
+                {
+                    Conteudo = Artigo.Conteudo.Substring(0, 150);
+                }
+                else
+                {
+                    Conteudo = Artigo.Conteudo.Substring(0, Artigo.Conteudo.Length - 2);
+                }
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@Artigo.Titulo</h5>
+                        <p class="card-text">@Conteudo...</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="nav-link" asp-action="Visualizar" asp-route-id="@Artigo.URL">Saiba Mais</a>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>

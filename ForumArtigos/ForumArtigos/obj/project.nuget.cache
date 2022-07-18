@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KoZTROjnk27Jj0I0TQ5ediSdY2g+zRz/IbR75DgFBGu8YhgnrIWmBozGfEftWN4g3OzF0ZQtC51IoA3cw+kWgA==",
+  "dgSpecHash": "akF6oI167zBYUZP/Eap7Ui5gybvVyYQY6qEe+KiTDXQ2DtBKC3plfaUmXxj3U1/tF33tlflPTpdOyqi1o1lQbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\Open Source\\ForumArtigos\\ForumArtigos\\ForumArtigos.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

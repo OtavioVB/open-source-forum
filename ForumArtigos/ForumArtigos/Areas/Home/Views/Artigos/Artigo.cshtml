@@ -1,0 +1,8 @@
+﻿@{
+    HttpClient HTTP_REQUEST = new HttpClient { BaseAddress = new Uri("https://localhost:7123/api/v1/content/artigos/artigo/") };
+    HttpResponseMessage HTTP_RESULT = await HTTP_REQUEST.GetAsync(TempData["ARTIGO_IDENTIFICADOR"].ToString());
+    string HTTP_CONTENT = await HTTP_RESULT.Content.ReadAsStringAsync();
+    Artigos jsonConvert = JsonConvert.DeserializeObject<Artigos>(HTTP_CONTENT);
+}
+<h1>@jsonConvert.Titulo</h1>
+<p>@jsonConvert.Conteudo</p>
