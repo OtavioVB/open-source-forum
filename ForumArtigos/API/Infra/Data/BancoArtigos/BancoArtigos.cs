@@ -60,5 +60,35 @@ namespace API.Infra.Data.BancoArtigos
                 CONEXAO_BANCO().Close();
             }
         }
+
+        public static DataTable BUSCAR_INFORMACOES_DO_ARTIGO(string URLDoArtigo)
+        {
+            try
+            {
+                using (MySqlCommand Comando = CONEXAO_BANCO().CreateCommand())
+                {
+                    Comando.CommandText = "SELECT N_ID AS Identificador, T_TITULO AS Titulo, T_CONTEUDO AS Conteudo, T_URL AS URL FROM TB_ARTIGO WHERE T_URL = @Url";
+                    Comando.Parameters.AddWithValue("@Url", URLDoArtigo);
+
+                    using (DataTable Data = new DataTable())
+                    {
+                        using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(Comando))
+                        {
+                            dataAdapter.Fill(Data);
+                        }
+
+                        return Data;
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                CONEXAO_BANCO().Close();
+            }
+        }
     }
 }

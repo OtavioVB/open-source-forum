@@ -2,7 +2,7 @@
 {
     public class ArtigosModel
     {
-        public string Título { get; set; }
-        public string Conteúdo { get; set; }
+        public string Titulo { get; set; }
+        public string Conteudo { get; set; }
     }
 }

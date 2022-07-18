@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using API.Models.Content;
 using API.Infra.Data.BancoArtigos;
 using API.Infra.CrossCutting;
+using System.Data;
 
 namespace API.Controllers
 {
@@ -15,7 +16,7 @@ namespace API.Controllers
         {
             try
             {
-                return TratamentoDeJSON.CONVERTER_DATATABLE_PARA_JSON(BancoArtigos.OBTER_TODOS_OS_ARTIGOS_CADASTRADOS());
+                return TratamentoDeJSON.CONVERTER_DATATABLE_PARA_JSON_LIST(BancoArtigos.OBTER_TODOS_OS_ARTIGOS_CADASTRADOS());
             }
             catch
             {
@@ -29,7 +30,7 @@ namespace API.Controllers
         {
             try
             {
-                BancoArtigos.INSERIR_NOVO_ARTIGO_NO_BANCO_DE_DADOS(Artigo.Título, Artigo.Conteúdo, TratamentoDeURL.OBTER_UMA_URL_AMIGÁVEL(Artigo.Título));
+                BancoArtigos.INSERIR_NOVO_ARTIGO_NO_BANCO_DE_DADOS(Artigo.Titulo, Artigo.Conteudo, TratamentoDeURL.OBTER_UMA_URL_AMIGÁVEL(Artigo.Titulo));
                 return StatusCode(201, "Todas as alterações foram realizadas com sucesso!");
             }
             catch
@@ -41,7 +42,17 @@ namespace API.Controllers
         [HttpGet("artigo/{url}")]
         public string Get(string url)
         {
-            return "Melhor do mundo";
+            try
+            {
+                using (DataTable Data = BancoArtigos.BUSCAR_INFORMACOES_DO_ARTIGO(url))
+                {
+                    return TratamentoDeJSON.CONVERTER_DATATABLE_PARA_JSON_OBJECT(Data);
+                }
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ namespace API.Infra.CrossCutting
 {
     public static class TratamentoDeJSON
     {
-        public static string CONVERTER_DATATABLE_PARA_JSON(DataTable Data)
+        public static string CONVERTER_DATATABLE_PARA_JSON_LIST(DataTable Data)
         {
             StringBuilder JSON = new StringBuilder();
             if (Data != null)
@@ -39,6 +39,33 @@ namespace API.Infra.CrossCutting
                     JSON.Append("]");
                 }
 
+                return JSON.ToString();
+            }
+
+            return "";
+        }
+
+        public static string CONVERTER_DATATABLE_PARA_JSON_OBJECT(DataTable Data)
+        {
+            StringBuilder JSON = new StringBuilder();
+            if (Data != null)
+            {
+                if (Data.Rows.Count == 1)
+                {
+                    JSON.Append("{");
+                    for (int k = 0; k < Data.Columns.Count; k++)
+                    {
+                        if (k < Data.Columns.Count - 1)
+                        {
+                            JSON.Append("\"" + Data.Columns[k].ColumnName.ToString() + "\":" + "\"" + Data.Rows[0][k].ToString() + "\",");
+                        }
+                        else if (k == Data.Columns.Count - 1)
+                        {
+                            JSON.Append("\"" + Data.Columns[k].ColumnName.ToString() + "\":" + "\"" + Data.Rows[0][k].ToString() + "\"");
+                        }
+                    }
+                    JSON.Append("}");
+                }
                 return JSON.ToString();
             }
 
