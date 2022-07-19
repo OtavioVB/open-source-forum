@@ -2,16 +2,14 @@
 @{
     ViewData["Title"] = "Publique seu artigo | Fórum";
 }
-<form asp-action="Enviar" asp-controller="Artigos">
-  <div class="form-group">
+<div class="form-group">
     <label>Título do Artigo</label>
-    <input asp-for="titulo" type="text" class="form-control" id="Titulo" placeholder="Título do seu artigo">
-  </div>
-  <div class="form-group">
+    <input type="text" class="form-control" id="Titulo" placeholder="Título do seu artigo">
+</div>
+<div class="form-group">
     <label>Conteúdo do Artigo</label>
-    <textarea asp-for="conteudo" class="form-control" id="Conteudo" rows="5"></textarea>
-  </div>
-  <div class="form-group">
-      <input type="submit" class="btn btn-primary" value="ENVIAR">
-  </div>
-</form>
+    <textarea class="form-control" id="Conteudo" rows="5" cols="25"></textarea>
+</div>
+<div class="form-group">
+    <input onclick="enviar()" type="submit" class="btn btn-primary" value="ENVIAR">
+</div>
